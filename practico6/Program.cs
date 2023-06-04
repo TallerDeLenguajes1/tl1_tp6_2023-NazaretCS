@@ -1,40 +1,29 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿//  PUNTO 2
+using System.Data;  // para poder usar a DataTable
 
-/**
-Console.WriteLine("Hello, World!5");
+string[] operacionesSimbol = { "+", "-", "*", "/" };
+string respuesta;
 
-int a;
+do
+{
+    Console.WriteLine("\n\nSeleccione la operación a Realizar:");
+    Console.WriteLine("\t1 - Suma \n\t2 - Resta\n\t3 - Multiplicación\n\t4 - Divición\n\t");
+    int.TryParse(Console.ReadLine(), out int operacionRealizar);
+    
+    // Obtengo los numeros a operar...
+    Console.WriteLine("Ingrese el primer valor a operar:");
+    float.TryParse(Console.ReadLine(), out float valor1);
 
-int b;
+    Console.WriteLine("\nIngrese el segundo valor a operar:");
+    float.TryParse(Console.ReadLine(), out float valor2);
 
-a = 10;
+    // formulo la exprecion como string
+    string expresion = $"{valor1} {operacionesSimbol[operacionRealizar - 1]} {valor2}";
 
-b = a;
+    DataTable dt = new DataTable();
+    object resultado = dt.Compute(expresion, ""); // ejecuto la operacion y la almaceno en resultado
+    Console.WriteLine("\nEl resutado es: " + resultado);
 
-Console.WriteLine("Valor de la variable a:"+a);
-Console.WriteLine("valor de b:"+b);
-*/
-
-
-//  PUNTO 1
-
-int num = 0;
-Console.WriteLine("Por favor ingrese el numero a convertir...");
-string cadena = Console.ReadLine();
-bool control = int.TryParse(cadena, out num); 
-
-
-if (control){
-    if (num > 0){
-        Console.WriteLine("El numero invertido es: ");
-        for (int i = 0; i < cadena.Length; i++)
-        {
-            Console.Write(num%10);
-            num = num /10;
-        }
-    } else {
-        Console.WriteLine("El numero ingresado es menor a 0...");
-    }
-} else {
-    Console.WriteLine("Se ingreso un valor que no corresponde...");
-}
+    Console.Write("¿Desea realizar otro cálculo?  1 = Si, 0 = No \n");
+    respuesta = Console.ReadLine();
+} while (respuesta == "1");
