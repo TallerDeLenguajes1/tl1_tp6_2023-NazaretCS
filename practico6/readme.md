@@ -16,14 +16,12 @@ Cuando creas una variable de tipo string y le asignas un valor, se reserva un es
 \b: Retroceso.
 \f: Avance de página.
 
-¿Que sucede cuando se utiliza el caracter@ y $ antes de una cadena de texto.?
+¿Que sucede cuando se utiliza el caracter "@" y "$" antes de una cadena de texto.?
 
-Cuando se utiliza el carácter @ antes de una cadena de texto en C#, se trata como una cadena de texto literal, esto significa que la cadena se interpreta tal como está escrita, sin evaluar las secuencias de escape.
-Al utilizar el carácter @, se omite la necesidad de duplicar las barras invertidas para representar secuencias de escape, como \n o \". Esto puede hacer que las cadenas de texto con muchas secuencias de escape sean más legibles y fáciles de mantener.
+Cuando se utiliza el carácter "@" antes de una cadena de texto en C#, se trata como una cadena de texto literal, esto significa que la cadena se interpreta tal como está escrita, sin evaluar las secuencias de escape.
+Al utilizar el carácter "@", se omite la necesidad de duplicar las barras invertidas para representar secuencias de escape, como \n o \". Esto puede hacer que las cadenas de texto con muchas secuencias de escape sean más legibles y fáciles de mantener.
 un ejemplo de aplicacion: 
     string path = "C:\\Users\\Usuario\\Documents\\archivo.txt";
     string path = @"C:\Users\Usuario\Documents\archivo.txt";
 
-El carácter $, por otro lado, se utiliza para formatear cadenas de texto de forma más conveniente mediante la interpolación de cadenas. Al preceder una cadena con el carácter $, se indica que se desea realizar interpolación de cadenas, lo que permite incluir expresiones y variables dentro de la cadena sin necesidad de concatenación manual.
-
-
+El carácter "$", por otro lado, se utiliza para formatear cadenas de texto de forma más conveniente mediante la interpolación de cadenas. Al preceder una cadena con el carácter "$", se indica que se desea realizar interpolación de cadenas, lo que permite incluir expresiones y variables dentro de la cadena sin necesidad de concatenación manual.
