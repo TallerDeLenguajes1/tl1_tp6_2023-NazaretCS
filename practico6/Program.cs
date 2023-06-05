@@ -26,3 +26,15 @@ foreach (var operacion in operaciones)
     Console.WriteLine($"Operación: {nombreOperacion}");
     Console.WriteLine($"Resultado: {funcionOperacion(num1)} \n"); 
 }
+
+
+Console.Write("\nPor favor ingrese un numero: \nNum1 = ");
+double.TryParse(Console.ReadLine(), out double num2);
+
+Console.Write("\nPor favor ingrese un numero: \nNum2 = ");
+double.TryParse(Console.ReadLine(), out double num3);
+
+double[] numeros = {num2, num3};
+
+Console.Write($"\nEl valor máximo es: {numeros.Min()}\n");
+Console.Write($"El valor mínimo es: {numeros.Min()}");
